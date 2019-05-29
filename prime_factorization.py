@@ -1,12 +1,9 @@
-from collections import Counter
 from itertools import groupby
 
 
-def is_prime(n):
-    return n == 2 or n & 1 and all(n % f for f in range(3, int(n ** 0.5) + 1, 2))
-
-
 def gen_prime_factors(n):
+    """Generate all the prime factors of n in ascending order"""
+
     # Check 2 first
     while n & 1 == 0:
         yield 2
@@ -17,10 +14,17 @@ def gen_prime_factors(n):
         while n % factor == 0:
             yield factor
             n //= factor
-        factor += 2
-        factor_sqr += factor - 1 << 2
+        factor, factor_sqr = factor + 2, factor_sqr + (factor + 1 << 2)
     if n > 1:
         yield n
+
+
+def prime_factors(n):
+    return [(p, sum(1 for _ in g)) for p, g in groupby(gen_prime_factors(n))]
+
+
+def is_prime(n):
+    return next(gen_prime_factors(n)) == n
 
 
 def gen_distinct_prime_factors(n):
@@ -28,14 +32,26 @@ def gen_distinct_prime_factors(n):
         yield p
 
 
-def prime_factors(n):
-    return Counter(gen_prime_factors(n))
-
-
 def totient(n):
     for p, _ in groupby(gen_prime_factors(n)):
         n = n // p * (p - 1)
     return n
+
+
+def smallest_prime_factor(n):
+    """Returns the smallest prime factor of n
+    n: An int >= 2
+    Raises a ValueError is n < 2
+    """
+    return next(p for p in gen_prime_factors(n))
+
+
+def largest_prime_factor(n):
+    """Returns the largest prime factor of n
+    n: An int >= 2
+    Raises a ValueError is n < 2
+    """
+    return max(p for p in gen_distinct_prime_factors(n))
 
 
 def gcd(a, b):
@@ -45,20 +61,19 @@ def gcd(a, b):
 
 
 def tower(base, h, m):
-    """Return base ** base ** ... ** base, where the height is h, modulo m. """
-    base %= m
-    if m == 1: return 0
-    if h == 0: return 1
-    if h == 1: return base
-    if h == 2: return pow(base, base, m)
-    if h == 3 and base < 8: return pow(base, base ** base, m)
-    if h == 4 and base == 2: return 65536 % m
-    if h == 5 and base == 2: return pow(2, 65536, m)
-    # if T > totient(m) and q, r = divmod(T, totient(m)), then
-    # b ** T mod m == b ** (q * totient(m) + r) mod m == b ** (totient(m) + r) mod m,
-    k = totient(m)
-    r = tower(base, h - 1, k)
-    return pow(base, k + r, m)
+    """Returns base ** base ** ... ** base modulo m, where the number of occurrences of base is h.
+    Note that ** is right-associative.
+    base is an int, base > 0,
+    h is an int, h > 0,
+    m is an int, m > 0
+    """
+    if m == 1:
+        return 0
+    if h == 1:
+        return base % m
+    tot = totient(m)
+    r = tower(base, h - 1, tot)
+    return pow(base, r if r else tot, m)
 
 
 def power_cycle(base, mod):
@@ -66,6 +81,7 @@ def power_cycle(base, mod):
 
 
 def find_cycle(f, start):
+    """Returns the start of a cycle, and the cycle length. """
     tortoise, hare = start, f(start)
     while tortoise != hare:
         hare = f(f(hare))

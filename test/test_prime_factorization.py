@@ -1,3 +1,4 @@
+from collections import Counter
 from unittest import TestCase
 from prime_factorization import *
 
@@ -21,11 +22,11 @@ class TestPrimeFactorization(TestCase):
         self.assertEqual([2, 7, 11, 13], list(gen_distinct_prime_factors(2 * 2 * 2 * 7 * 7 * 11 * 13)))
 
     def test_prime_factors(self):
-        self.assertEqual({2: 1, 5: 1}, prime_factors(10))
-        self.assertEqual({2: 2, 3: 1}, prime_factors(12))
-        self.assertEqual({2: 4}, prime_factors(16))
-        self.assertEqual({2: 1, 7: 2}, prime_factors(98))
-        self.assertEqual({2: 6, 3: 4, 5: 2, 107: 1}, prime_factors(2 ** 6 * 3 ** 4 * 5 ** 2 * 107))
+        self.assertEqual([(2, 1), (5, 1)], prime_factors(10))
+        self.assertEqual([(2, 2), (3, 1)], prime_factors(12))
+        self.assertEqual([(2, 4)], prime_factors(16))
+        self.assertEqual([(2, 1), (7, 2)], prime_factors(98))
+        self.assertEqual([(2, 6), (3, 4), (5, 2), (107, 1)], prime_factors(2 ** 6 * 3 ** 4 * 5 ** 2 * 107))
 
     def test_gcd(self):
         self.assertEqual(3, gcd(3 * 12, 3 * 17))
@@ -36,7 +37,7 @@ class TestPrimeFactorization(TestCase):
         self.assertEqual(12, gcd(12, 12 * 12))
         for m in range(1, 100):
             for n in range(m):
-                self.assertEqual(gcd(m, n), gcd(n,m))
+                self.assertEqual(gcd(m, n), gcd(n, m))
                 self.assertEqual(m % gcd(m, n), 0)
                 self.assertEqual(n % gcd(m, n), 0)
 
@@ -71,10 +72,25 @@ class TestPrimeFactorization(TestCase):
         self.assertEqual((1, 30), power_cycle(4, 143))
         self.assertEqual((1, 55), power_cycle(4, 121))
         self.assertEqual((128, 62500), power_cycle(2, 10000000))
-        self.assertTrue(10**6 < 2 * 3**14 < 10**7)
-        self.assertTrue(2 * 3**14 < 10**7 < 2 * 3**15)
-        self.assertEqual((3**14, 1), power_cycle(3, 2 * 3**14))
+        self.assertTrue(10 ** 6 < 2 * 3 ** 14 < 10 ** 7)
+        self.assertTrue(2 * 3 ** 14 < 10 ** 7 < 2 * 3 ** 15)
+        self.assertEqual((3 ** 14, 1), power_cycle(3, 2 * 3 ** 14))
         self.assertEqual((4, 20), power_cycle(2, 100))
         self.assertTrue(all(totient(100) % power_cycle(n, 100)[1] == 0 for n in range(2, 100)))
         for n in range(100, 1000, 7):
             self.assertTrue(all(totient(n) % power_cycle(n, n)[1] == 0 for n in range(2, n)))
+
+    def test_find_cycle(self):
+
+        def f(n):
+            return n % 23 * 10
+
+        self.assertEqual((10, 22), find_cycle(f, 10))
+
+    def test_largest_prime_factor(self):
+        self.assertEqual(101, largest_prime_factor(101 * 17 * 5))
+        self.assertRaises(ValueError, largest_prime_factor, 1)
+
+    def test_smallest_prime_factor(self):
+        self.assertEqual(5, smallest_prime_factor(101 * 17 * 5))
+        self.assertRaises(ValueError, largest_prime_factor, 1)
