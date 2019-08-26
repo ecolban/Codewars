@@ -11,10 +11,11 @@ def gen_prime_factors(n):
     # Check odd factors
     factor, factor_sqr = 3, 9
     while factor_sqr <= n:
-        while n % factor == 0:
+        if n % factor == 0:
             yield factor
             n //= factor
-        factor, factor_sqr = factor + 2, factor_sqr + (factor + 1 << 2)
+        else:
+            factor, factor_sqr = factor + 2, factor_sqr + (factor + 1 << 2)
     if n > 1:
         yield n
 
@@ -24,7 +25,7 @@ def prime_factors(n):
 
 
 def is_prime(n):
-    return next(gen_prime_factors(n)) == n
+    return 1 < n == next(gen_prime_factors(n))
 
 
 def gen_distinct_prime_factors(n):

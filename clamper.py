@@ -1,3 +1,4 @@
+import math
 from functools import wraps
 from numbers import Number
 
@@ -18,3 +19,8 @@ def clamp(lo=None, hi=None):
 
 
 clamped_identity = clamp(lo=0, hi=1)(lambda x: x)
+
+
+@clamp(-0.5, 0.5)
+def clamped_sin(x):
+    return math.sin(x)

@@ -27,4 +27,5 @@ def test_get_cards():
         print("Any two cards have exactly one image in common.")
 
 
-test_get_cards()
+if __name__ == "__main__":
+    test_get_cards()
