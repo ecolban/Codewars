@@ -1,7 +1,7 @@
 from random import uniform
 from unittest import TestCase
 
-from bezier_curves import *
+from src.bezier_curves import *
 
 
 def assert_equal_points(p1, p2, delta=1e-6):

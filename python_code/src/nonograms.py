@@ -5,9 +5,9 @@ from heapq import heapify, heappop, heappush, heapreplace
 class Nonogram:
 
     def __init__(self, all_clues):
-        self.horizontal_clues, self.vertical_clues = all_clues
-        self.height = len(self.vertical_clues)
-        self.width = len(self.horizontal_clues)
+        self.column_clues, self.row_clues = all_clues
+        self.height = len(self.row_clues)
+        self.width = len(self.column_clues)
         # self.board[i][j] == -1 if not yet known whether the value should be 1 or 0
         self.board = [[-1 for _ in range(self.width)] for _ in range(self.height)]
         self.possible_ = {}
@@ -46,12 +46,12 @@ class Nonogram:
     def priority(self, i, t):
         if (i, t) in self.possible_:
             return len(self.possible_[(i, t)])
-        clues = self.vertical_clues[i] if t == 0 else self.horizontal_clues[i]
+        clues = self.row_clues[i] if t == 0 else self.column_clues[i]
         dof = Nonogram.free_spaces(clues, self.width)
         return choose(len(clues) + dof, dof)
 
     def initialize_possible(self, i, t):
-        clues = self.vertical_clues[i] if t == 0 else self.horizontal_clues[i]
+        clues = self.row_clues[i] if t == 0 else self.column_clues[i]
         dof = Nonogram.free_spaces(clues, self.width if t == 0 else self.height)
         for combination in combinations(range(len(clues) + dof), dof):
             assignment = Nonogram.get_assignment(clues, combination)
@@ -78,35 +78,37 @@ class Nonogram:
         return (r for r in rs if self.verify_(r, i, t))
 
     def __str__(self):
-        horizontal_clues_height = max(len(clues) for clues in self.horizontal_clues)
-        vertical_clue_strings = [','.join(str(c) for c in clues) for clues in self.vertical_clues]
-        vertical_clues_width = max(len(s) for s in vertical_clue_strings)
-        row_separator = '-' * vertical_clues_width + '|' + '---' * (self.width - 1) + '--|'
+        col_clues_height = max(len(clues) for clues in self.column_clues)
+        row_clues_strings = [','.join(str(c) for c in clues) for clues in self.row_clues]
+        row_clues_width = max(len(s) for s in row_clues_strings)
+        row_separator = '-' * row_clues_width + '|' + '---' * (self.width - 1) + '--|'
 
         def row_gen():
-            # Add horizontal clues
-            for i in range(horizontal_clues_height, 0, -1):
-                yield (' ' * vertical_clues_width + '|'
-                       + '|'.join(' '.join('%2d' % self.horizontal_clues[j][k] if k >= 0 else '  '
-                                           for r in range(min(5, self.width - 5 * q))
-                                           for j in (5 * q + r,)
-                                           for k in (len(self.horizontal_clues[j]) - i,))
-                                  for q in range((self.width + 4) // 5))
+            # Add column clues
+            for i in range(col_clues_height, 0, -1):
+                yield (' ' * row_clues_width + '|'
+                       + '|'.join(  # join groups of 5 columns
+                            ' '.join(  # join 5 consecutive columns
+                                '%2d' % self.column_clues[5 * q + r][k] if k >= 0 else '  '
+                                for r in range(min(5, self.width - 5 * q))
+                                for k in (len(self.column_clues[5 * q + r]) - i,))
+                            for q in range((self.width + 4) // 5))
                        + '|')
             yield row_separator
-            # Add regular rows
+            # Add row clues followed by row for each row of board
             for i, row in enumerate(self.board):
-                yield (vertical_clue_strings[i].rjust(vertical_clues_width) + '|'
-                       + '|'.join(' '.join('%2d' % row[j] if row[j] in (0, 1) else ' _'
-                                           for r in range(min(5, self.width - 5 * q))
-                                           for j in (5 * q + r,))
-                                  for q in range((self.width + 4) // 5))
+                yield (row_clues_strings[i].rjust(row_clues_width)  # row clues
+                       + '|'
+                       + '|'.join(  # join groups of 5 columns
+                            ' '.join(  # join 5 consecutive columns
+                                '%2d' % row[5 * q + r] if row[5 * q + r] in (0, 1) else ' _'
+                                for r in range(min(5, self.width - 5 * q)))
+                            for q in range((self.width + 4) // 5))  # row values
                        + '|')
-                if i % 5 == 4:
-                    yield row_separator
-            # Add bottom line
-            if self.height % 5 != 0:
-                yield row_separator
+                # Add row separator for every 5 rows
+                if i % 5 == 4: yield row_separator
+            # Add bottom row separator
+            if self.height % 5 != 0: yield row_separator
 
         return '\n'.join(row_gen())
 
@@ -130,6 +132,13 @@ clues_3 = (((3,), (4,), (2, 2, 1), (2, 4, 2), (6,)),
 clues_4 = (((3,), (4,), (2, 2, 1), (2, 4, 1), (6,), (3,)),
            ((4,), (6,), (2, 2), (2, 2), (2,), (2,), (2,), (2,), (), (2,)))
 
+clues_5 = (((1, 2, 6), (2, 6), (4, 2, 2), (1, 5, 1), (2, 1, 7, 5), (1, 1, 7, 7), (2, 1, 2, 10), (2, 7), (2, 1, 4, 2),
+            (1, 3, 4, 5), (5, 4, 6), (7, 5, 6), (8, 4, 3, 2), (8, 3, 2, 1), (5, 2, 2, 1, 3), (7, 1, 3, 3), (8, 9, 3),
+            (5, 3, 10, 1, 1), (9, 1, 1, 4, 5), (1, 9, 2, 3), (3, 4, 5), (1, 1, 2, 2, 1, 1), (4, 1), (1, 4, 2), (2, 4)),
+           ((1, 4), (6, 2, 1), (3, 5), (2, 10), (1, 9, 1), (3, 12, 1), (3, 8, 3), (4, 2, 3, 7), (3, 9), (3, 3, 6),
+            (2, 1, 2), (3, 4), (1, 1, 3, 2), (1, 1, 4), (3, 7, 2, 1), (3, 13, 1), (13,), (9, 5), (3, 5, 2),
+            (9, 3, 2, 5), (3, 9, 1, 9), (2, 3, 5, 3, 3), (2, 3, 3, 10), (3, 3, 4, 3, 1, 1), (3, 10, 3)))
+
 
 def choose(n, k):
     k = min(k, n - k)
@@ -140,7 +149,7 @@ def choose(n, k):
 
 
 def test_nonogram():
-    ng = Nonogram(clues_1)
+    ng = Nonogram(clues_5)
     print('dimension = %dx%d' % (ng.height, ng.width))
     from time import time
     start = time()

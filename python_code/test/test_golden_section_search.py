@@ -2,7 +2,7 @@ import math
 from random import uniform
 from unittest import TestCase
 
-from golden_section_search import gss, gss_array, DELTA
+from src.golden_section_search import gss, gss_array, DELTA
 
 
 class TestGoldenSectionSearch(TestCase):

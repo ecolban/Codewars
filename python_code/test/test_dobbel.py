@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from dobbel import get_cards
+from src.dobbel import get_cards
 
 
 class TestDobbel(TestCase):

@@ -1,5 +1,5 @@
 from unittest import TestCase
-from survivors import survivor, survivor1, nth_survivor
+from src.survivors import survivor, survivor1, nth_survivor
 from random import randrange
 
 
