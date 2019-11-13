@@ -1,4 +1,5 @@
 from itertools import groupby
+from math import gcd
 
 
 def gen_prime_factors(n):
@@ -54,3 +55,15 @@ def largest_prime_factor(n):
     Raises a ValueError if n < 2
     """
     return max(gen_prime_factors(n))
+
+
+def modinv(x, n):
+    a, b, k, m = x, n, 1, 0
+    while a > 0:
+        q, r = divmod(b, a)
+        a, b, k, m, = r, a, m - q * k, k
+    return 0 if b > 1 else m if m > 0 else n + m
+
+
+if __name__ == "__main__":
+    print([(x, modinv(x, 13)) for x in range(1, 13)])
