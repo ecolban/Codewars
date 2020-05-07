@@ -20,7 +20,7 @@ class Segment(metaclass=ABCMeta):
 class Line(Segment):
 
     def __init__(self, *coords):
-        self._control_points = coords
+        self._control_points = coords[:4]
 
     @property
     def control_points(self):
@@ -42,8 +42,8 @@ class Line(Segment):
 class Quad(Segment):
 
     def __init__(self, *coords):
-        self._control_points = coords
-        self.line = Line(*self._control_points[:4])
+        self._control_points = coords[:6]
+        self.line = Line(*coords[:4])
 
     @property
     def control_points(self):
@@ -53,7 +53,7 @@ class Quad(Segment):
         x0, y0, x1, y1, x2, y2 = self._control_points
         u = 1 - t
         uu, ut, tt = u * u, u * t, t * t
-        return x0 * uu + x1 * 2 * ut + x2 * tt,\
+        return x0 * uu + x1 * 2 * ut + x2 * tt, \
                y0 * uu + y1 * 2 * ut + y2 * tt
 
     def sub_segment(self, t):
@@ -69,9 +69,9 @@ class Quad(Segment):
 class Cubic(Segment):
 
     def __init__(self, *coords):
-        self._control_points = coords
-        self.line = Line(*self._control_points[:4])
-        self.quad = Quad(*self._control_points[:6])
+        self._control_points = coords[:8]
+        self.line = Line(*coords[:4])
+        self.quad = Quad(*coords[:6])
 
     @property
     def control_points(self):

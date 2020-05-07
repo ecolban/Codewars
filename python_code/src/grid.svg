@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="380" xmlns:xlink="http://www.w3.org/1999/xlink">
+<polygon stroke="#000000" fill="#ffffff" points="0 0 0 380 1180 380, 1180, 0"/>
+<polygon stroke="#999999" fill="none" points="490 10 10 10 10 170 490 170"/>
+<polygon stroke="#999999" fill="none" points="10 10 450 10 450 210 10 210"/>
+<polygon stroke="#999999" fill="none" points="290 10 10 10 10 290 290 290"/>
+<polygon stroke="#999999" fill="none" points="450 10 10 10 10 290 450 290"/>
+<polygon stroke="#999999" fill="none" points="450 10 170 10 170 130 450 130"/>
+<polygon stroke="#999999" fill="none" points="290 10 450 10 450 290 290 290"/>
+<polygon stroke="#999999" fill="none" points="450 10 770 10 770 370 450 370"/>
+<polygon stroke="#999999" fill="none" points="770 50 690 10 650 90 730 130"/>
+<polygon stroke="#999999" fill="none" points="930 50 690 10 650 250 890 290"/>
+<polygon stroke="#999999" fill="none" points="690 10 450 130 570 370 810 250"/>
+<polygon stroke="#999999" fill="none" points="90 50 930 50 930 330 90 330"/>
+<polygon stroke="#999999" fill="none" points="930 50 810 50 810 290 930 290"/>
+<polygon stroke="#999999" fill="none" points="1050 90 930 50 850 290 970 330"/>
+<polygon stroke="#999999" fill="none" points="650 90 290 90 290 290 650 290"/>
+<polygon stroke="#999999" fill="none" points="370 90 330 130 570 370 610 330"/>
+<polygon stroke="#999999" fill="none" points="210 170 170 130 10 290 50 330"/>
+<polygon stroke="#999999" fill="none" points="610 130 450 130 450 210 610 210"/>
+<polygon stroke="#999999" fill="none" points="730 130 450 130 450 290 730 290"/>
+<polygon stroke="#999999" fill="none" points="450 130 890 130 890 290 450 290"/>
+<polygon stroke="#999999" fill="none" points="890 130 730 130 730 290 890 290"/>
+<polygon stroke="#999999" fill="none" points="10 170 850 170 850 290 10 290"/>
+<polygon stroke="#999999" fill="none" points="10 170 1010 170 1010 290 10 290"/>
+<polygon stroke="#999999" fill="none" points="490 170 130 170 130 330 490 330"/>
+<polygon stroke="#999999" fill="none" points="1010 170 130 170 130 330 1010 330"/>
+<polygon stroke="#999999" fill="none" points="1010 170 490 170 490 330 1010 330"/>
+<polygon stroke="#999999" fill="none" points="1010 170 850 170 850 290 1010 290"/>
+<polygon stroke="#999999" fill="none" points="450 210 10 210 10 290 450 290"/>
+<polygon stroke="#999999" fill="none" points="810 250 650 250 650 290 810 290"/>
+<polygon stroke="#999999" fill="none" points="930 290 1010 290 1010 330 930 330"/>
+<circle cx="10" cy="10" r="2" stroke="#000000"/>
+<circle cx="170" cy="10" r="2" stroke="#000000"/>
+<circle cx="290" cy="10" r="2" stroke="#000000"/>
+<circle cx="450" cy="10" r="2" stroke="#000000"/>
+<circle cx="490" cy="10" r="2" stroke="#000000"/>
+<circle cx="690" cy="10" r="2" stroke="#000000"/>
+<circle cx="770" cy="10" r="2" stroke="#000000"/>
+<circle cx="90" cy="50" r="2" stroke="#000000"/>
+<circle cx="770" cy="50" r="2" stroke="#000000"/>
+<circle cx="810" cy="50" r="2" stroke="#000000"/>
+<circle cx="930" cy="50" r="2" stroke="#000000"/>
+<circle cx="1090" cy="50" r="2" stroke="#000000"/>
+<circle cx="290" cy="90" r="2" stroke="#000000"/>
+<circle cx="330" cy="90" r="2" stroke="#000000"/>
+<circle cx="370" cy="90" r="2" stroke="#000000"/>
+<circle cx="650" cy="90" r="2" stroke="#000000"/>
+<circle cx="1050" cy="90" r="2" stroke="#000000"/>
+<circle cx="1170" cy="90" r="2" stroke="#000000"/>
+<circle cx="170" cy="130" r="2" stroke="#000000"/>
+<circle cx="330" cy="130" r="2" stroke="#000000"/>
+<circle cx="450" cy="130" r="2" stroke="#000000"/>
+<circle cx="610" cy="130" r="2" stroke="#000000"/>
+<circle cx="730" cy="130" r="2" stroke="#000000"/>
+<circle cx="890" cy="130" r="2" stroke="#000000"/>
+<circle cx="10" cy="170" r="2" stroke="#000000"/>
+<circle cx="130" cy="170" r="2" stroke="#000000"/>
+<circle cx="210" cy="170" r="2" stroke="#000000"/>
+<circle cx="490" cy="170" r="2" stroke="#000000"/>
+<circle cx="850" cy="170" r="2" stroke="#000000"/>
+<circle cx="1010" cy="170" r="2" stroke="#000000"/>
+<circle cx="10" cy="210" r="2" stroke="#000000"/>
+<circle cx="450" cy="210" r="2" stroke="#000000"/>
+<circle cx="610" cy="210" r="2" stroke="#000000"/>
+<circle cx="250" cy="250" r="2" stroke="#000000"/>
+<circle cx="650" cy="250" r="2" stroke="#000000"/>
+<circle cx="810" cy="250" r="2" stroke="#000000"/>
+<circle cx="10" cy="290" r="2" stroke="#000000"/>
+<circle cx="290" cy="290" r="2" stroke="#000000"/>
+<circle cx="450" cy="290" r="2" stroke="#000000"/>
+<circle cx="650" cy="290" r="2" stroke="#000000"/>
+<circle cx="730" cy="290" r="2" stroke="#000000"/>
+<circle cx="810" cy="290" r="2" stroke="#000000"/>
+<circle cx="850" cy="290" r="2" stroke="#000000"/>
+<circle cx="890" cy="290" r="2" stroke="#000000"/>
+<circle cx="930" cy="290" r="2" stroke="#000000"/>
+<circle cx="1010" cy="290" r="2" stroke="#000000"/>
+<circle cx="50" cy="330" r="2" stroke="#000000"/>
+<circle cx="90" cy="330" r="2" stroke="#000000"/>
+<circle cx="130" cy="330" r="2" stroke="#000000"/>
+<circle cx="490" cy="330" r="2" stroke="#000000"/>
+<circle cx="610" cy="330" r="2" stroke="#000000"/>
+<circle cx="930" cy="330" r="2" stroke="#000000"/>
+<circle cx="970" cy="330" r="2" stroke="#000000"/>
+<circle cx="1010" cy="330" r="2" stroke="#000000"/>
+<circle cx="210" cy="370" r="2" stroke="#000000"/>
+<circle cx="450" cy="370" r="2" stroke="#000000"/>
+<circle cx="570" cy="370" r="2" stroke="#000000"/>
+<circle cx="770" cy="370" r="2" stroke="#000000"/>
+</svg>
