@@ -1,50 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a355355-927b-40d1-b8dd-b73f1ecf6768" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_code/python_code.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Codewars.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Codewars.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/erikc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/erikc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+    <list default="true" id="8a355355-927b-40d1-b8dd-b73f1ecf6768" name="Default" comment="More stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bezier_curves.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/bezier_curves.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/centre_of_attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/centre_of_attention.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clamper.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/clamper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/divisible_by_primes.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/divisible_by_primes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dobbel.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/dobbel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/golden_section_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/golden_section_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huffman.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/huffman.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin_code/out/production/kotlin_code/Dinglemouse$hello$seq$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_code/out/production/kotlin_code/Dinglemouse$hello$seq$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin_code/out/production/kotlin_code/DivisibleByPrimesKt$factors$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_code/out/production/kotlin_code/DivisibleByPrimesKt$factors$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin_code/out/production/kotlin_code/DivisibleByPrimesKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_code/out/production/kotlin_code/DivisibleByPrimesKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin_code/out/production/kotlin_code/TestExample$factors$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_code/out/production/kotlin_code/TestExample$factors$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin_code/out/production/kotlin_code/TestExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_code/out/production/kotlin_code/TestExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next_smaller.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/next_smaller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nonograms.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/nonograms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prime_factorization.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/prime_factorization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prime_factorization_poor.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/prime_factorization_poor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sales_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/sales_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/string_n_iterations.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/string_n_iterations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/survivors.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/survivors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_bezier_curves.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/test/test_bezier_curves.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_dobbel.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/test/test_dobbel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_golden_section_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/test/test_golden_section_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_prime_factorization.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/test/test_prime_factorization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_sales_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/test/test_sales_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_survivor.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/test/test_survivor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_tower.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/test/test_tower.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiling.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/tiling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tower.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/tower.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_code/src/drain_fill.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/drain_fill.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,60 +19,54 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Class" />
         <option value="Kotlin File" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>\((\d), (\d)\)</find>
-      <find>gherkin_statement_pattern</find>
-      <find>file_filter</find>
-      <find>enco</find>
-      <find>deco</find>
-      <find>0</find>
-      <find>self.free_spaces</find>
-      <find>self.b</find>
-      <find>report\[\d]</find>
-      <find>int</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>\1: \2</replace>
-      <replace>$1: $2</replace>
-      <replace>next(group)</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JupyterTrust" id="1e84877f-953a-477c-a583-e33ef9f270c0" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1R4N48NyduOHfoKHRVELybqGPWy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TF_FMT": "false",
+    "last_opened_file_path": "/Users/Erikc/Documents/Projects/Codewars",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings>
+        <option name="useSoftWraps" value="true" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/python_code/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -120,20 +77,8 @@
       <recent name="$PROJECT_DIR$/test" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_sales_report.TestSalesReport">
-    <configuration name="sales_report" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python tests.pytest for test_drain_fill.test_drain_fill">
+    <configuration name="bridge_puzzle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,8 +90,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/sales_report.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/bridge_puzzle.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -155,7 +99,65 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_sales_report.TestSalesReport" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="drain_fill" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/drain_fill.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="shrink_list" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/shrink_list.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for drain_fill.test_fizzbuzz" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="python_code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;drain_fill.test_fizzbuzz&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_drain_fill.test_drain_fill" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -164,82 +166,31 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_sales_report.TestSalesReport&quot;" />
+      <option name="_new_target" value="&quot;test_drain_fill.test_drain_fill&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.test_prime_factorization.TestPrimeFactorization" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.test_prime_factorization.TestPrimeFactorization&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test.test_prime_factorization.TestPrimeFactorization" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.test_prime_factorization.TestPrimeFactorization&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test.test_sales_report.TestSalesReport" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.test_sales_report.TestSalesReport&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test.test_sales_report.TestSalesReport.test_generate_report" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.test_sales_report.TestSalesReport.test_generate_report&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Python.bridge_puzzle" />
+      <item itemvalue="Python.drain_fill" />
+      <item itemvalue="Python.shrink_list" />
+      <item itemvalue="Python tests.pytest for drain_fill.test_fizzbuzz" />
+      <item itemvalue="Python tests.pytest for test_drain_fill.test_drain_fill" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test_sales_report.TestSalesReport" />
-        <item itemvalue="Python.sales_report" />
-        <item itemvalue="Python tests.Unittests for test.test_prime_factorization.TestPrimeFactorization" />
-        <item itemvalue="Python tests.Unittests for test.test_prime_factorization.TestPrimeFactorization" />
-        <item itemvalue="Python tests.Unittests for test.test_sales_report.TestSalesReport" />
+        <item itemvalue="Python tests.pytest for test_drain_fill.test_drain_fill" />
+        <item itemvalue="Python.bridge_puzzle" />
+        <item itemvalue="Python.drain_fill" />
+        <item itemvalue="Python tests.pytest for drain_fill.test_fizzbuzz" />
+        <item itemvalue="Python.shrink_list" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -268,37 +219,160 @@
       <workItem from="1568673914288" duration="8736000" />
       <workItem from="1568922215111" duration="11043000" />
       <workItem from="1569097362658" duration="1153000" />
+      <workItem from="1574039923550" duration="21477000" />
+      <workItem from="1574125271433" duration="3731000" />
+      <workItem from="1574631902166" duration="7339000" />
+      <workItem from="1574904368518" duration="22933000" />
+      <workItem from="1575427948713" duration="3339000" />
+      <workItem from="1575574744798" duration="185000" />
+      <workItem from="1575574953570" duration="406000" />
+      <workItem from="1575575387254" duration="913000" />
+      <workItem from="1575866952061" duration="2703000" />
+      <workItem from="1576084949516" duration="4685000" />
+      <workItem from="1576105452447" duration="1664000" />
+      <workItem from="1576188947227" duration="19000" />
+      <workItem from="1576336239767" duration="25565000" />
+      <workItem from="1577002559247" duration="635000" />
+      <workItem from="1577829690383" duration="15579000" />
+      <workItem from="1577985842251" duration="598000" />
+      <workItem from="1578106832244" duration="35663000" />
+      <workItem from="1578410757783" duration="38864000" />
+      <workItem from="1579498894416" duration="2091000" />
+      <workItem from="1579552051431" duration="972000" />
+      <workItem from="1579744991347" duration="97000" />
+      <workItem from="1579745151531" duration="3226000" />
+      <workItem from="1580663657936" duration="28359000" />
+      <workItem from="1581533403674" duration="680000" />
+      <workItem from="1581740331915" duration="494000" />
+      <workItem from="1581885300865" duration="7644000" />
+      <workItem from="1581994272360" duration="764000" />
+      <workItem from="1583624105278" duration="29778000" />
+      <workItem from="1583790561889" duration="1117000" />
+      <workItem from="1583798640391" duration="1288000" />
+      <workItem from="1583809113540" duration="2476000" />
+      <workItem from="1583918630721" duration="17120000" />
+      <workItem from="1583954764792" duration="3507000" />
+      <workItem from="1583982936331" duration="10039000" />
+      <workItem from="1584032826087" duration="236000" />
+      <workItem from="1584064616352" duration="10015000" />
+      <workItem from="1584118411465" duration="492000" />
+      <workItem from="1584122145695" duration="27433000" />
+      <workItem from="1585261121135" duration="55000" />
+      <workItem from="1588800772879" duration="1665000" />
+      <workItem from="1590802566408" duration="1779000" />
+      <workItem from="1592174786361" duration="14687000" />
+      <workItem from="1592276436448" duration="3275000" />
+      <workItem from="1593786305702" duration="11837000" />
+      <workItem from="1593999510792" duration="8267000" />
+      <workItem from="1594597385816" duration="1437000" />
+      <workItem from="1594599287236" duration="5280000" />
+      <workItem from="1594614339981" duration="16764000" />
     </task>
+    <task id="LOCAL-00001" summary="More stuff">
+      <created>1635938884613</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635938884613</updated>
+    </task>
+    <task id="LOCAL-00002" summary="More stuff">
+      <created>1638461607748</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638461607748</updated>
+    </task>
+    <task id="LOCAL-00003" summary="More stuff">
+      <created>1661060260516</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661060260516</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="More stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="More stuff" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/android/util/Features/analysis.py</url>
-          <line>87</line>
-          <option name="timeStamp" value="31" />
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/kotlin_code/src/Rational.kt</url>
+          <line>144</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/python_code/src/string_n_iterations.py</url>
-          <line>86</line>
-          <option name="timeStamp" value="88" />
+          <url>file://$PROJECT_DIR$/python_code/test/test_sales_report.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/morse_code.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/pick_until_match.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/burrows_wheeler_transformation.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/regex_parser.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/battleship_2.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="r == 7 and c == 9" language="Python" />
+          <url>file://$PROJECT_DIR$/python_code/src/battleship_2.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/shortest_knight_path.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/nearby_duplicates.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/test/fractions_test.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/smaller_than_me.py</url>
+          <line>123</line>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -310,39 +384,18 @@
       </default-breakpoints>
     </breakpoint-manager>
   </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_sales_report_TestSalesReport_test_sales_report.coverage" NAME="Unittests for test_sales_report.TestSalesReport.test_sales_report Coverage Results" MODIFIED="1567019433986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_sales_report_TestSalesReport_test_process_product.coverage" NAME="Unittests for test_sales_report.TestSalesReport.test_process_product Coverage Results" MODIFIED="1568924288938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_code" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_prime_factorization_TestPrimeFactorization_test_totient.coverage" NAME="Unittests for test_prime_factorization.TestPrimeFactorization.test_totient Coverage Results" MODIFIED="1567028347803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Codewars$tower.coverage" NAME="tower Coverage Results" MODIFIED="1568676039062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_in_test_sales_report_py.coverage" NAME="Unittests in test_sales_report.py Coverage Results" MODIFIED="1568923947580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_code/test" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_tower_TestTower.coverage" NAME="Unittests for test_tower.TestTower Coverage Results" MODIFIED="1568677463042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_sales_report_TestSalesReport_test_process_group.coverage" NAME="Unittests for test_sales_report.TestSalesReport.test_process_group Coverage Results" MODIFIED="1568437609516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Codewars$nonograms.coverage" NAME="nonograms Coverage Results" MODIFIED="1566876436332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Codewars$dobbel.coverage" NAME="dobbel Coverage Results" MODIFIED="1565886513601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_prime_factorization_TestPrimeFactorization_test_gen_distinct_prime_factors.coverage" NAME="Unittests for test_prime_factorization.TestPrimeFactorization.test_gen_distinct_prime_factors Coverage Results" MODIFIED="1568674558316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_prime_factorization_TestPrimeFactorization_test_prime_factors_grouped.coverage" NAME="Unittests for test_prime_factorization.TestPrimeFactorization.test_prime_factors_grouped Coverage Results" MODIFIED="1568930083107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_code" />
-    <SUITE FILE_PATH="coverage/Codewars$tiling.coverage" NAME="tiling Coverage Results" MODIFIED="1563663414204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Codewars$divisible_by_primes.coverage" NAME="divisible_by_primes Coverage Results" MODIFIED="1560636139694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_sales_report_TestSalesReport_test_generate_report_all_in_one.coverage" NAME="Unittests for test_sales_report.TestSalesReport.test_generate_report_all_in_one Coverage Results" MODIFIED="1567619547006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_sales_report_TestSalesReport.coverage" NAME="Unittests for test_sales_report.TestSalesReport Coverage Results" MODIFIED="1569098340067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_code/test" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_prime_factorization_TestPrimeFactorization_test_smallest_prime_factor.coverage" NAME="Unittests for test_prime_factorization.TestPrimeFactorization.test_smallest_prime_factor Coverage Results" MODIFIED="1567028778529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_prime_factorization_TestPrimeFactorization_test_prime_factors.coverage" NAME="Unittests for test_prime_factorization.TestPrimeFactorization.test_prime_factors Coverage Results" MODIFIED="1559171592791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_prime_factorization_TestPrimeFactorization.coverage" NAME="Unittests for test_prime_factorization.TestPrimeFactorization Coverage Results" MODIFIED="1569012958530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_code" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_sales_report_TestSalesReport_test_generate_report.coverage" NAME="Unittests for test_sales_report.TestSalesReport.test_generate_report Coverage Results" MODIFIED="1568925926360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_code" />
-    <SUITE FILE_PATH="coverage/Codewars$prime_factorization.coverage" NAME="prime_factorization Coverage Results" MODIFIED="1563663155900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_in_test.coverage" NAME="Unittests in test Coverage Results" MODIFIED="1568923936769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_code/test" />
-    <SUITE FILE_PATH="coverage/Codewars$Unittests_for_test_prime_factorization_TestPrimeFactorization_test_largest_prime_factor.coverage" NAME="Unittests for test_prime_factorization.TestPrimeFactorization.test_largest_prime_factor Coverage Results" MODIFIED="1568677775537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Codewars$sales_report.coverage" NAME="sales_report Coverage Results" MODIFIED="1569098258942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_code/src" />
-    <SUITE FILE_PATH="coverage/Codewars$next_smaller.coverage" NAME="next_smaller Coverage Results" MODIFIED="1565946847022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>k</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="Codewars" type="b2602c69:ProjectViewProjectNode" />
+        <item name="Codewars" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="Codewars" type="b2602c69:ProjectViewProjectNode" />
+        <item name="Codewars" type="462c0819:PsiDirectoryNode" />
+        <item name="python_code" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
   </component>
 </project>
