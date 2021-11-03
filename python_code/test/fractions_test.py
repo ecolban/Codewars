@@ -1,11 +1,11 @@
 from fractions import Fraction
-from math import gcd
-from prime_factorization import is_prime, prime_factors
-from heapq import heappush, heappop
+
+from prime_factorization import prime_factors
 
 
 def gcd_round(a, b, epsilon):
-    if b == 0: return a
+    if b == 0:
+        return a
     while abs(a / b) > epsilon:
         a, b = b % a, a
     return b

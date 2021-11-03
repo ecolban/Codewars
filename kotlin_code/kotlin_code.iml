@@ -21,4 +21,7 @@
       </library>
     </orderEntry>
   </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="" />
+  </component>
 </module>

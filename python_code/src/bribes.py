@@ -2,8 +2,6 @@ from functools import lru_cache
 
 
 def solve(bribes):
-    if len(bribes) <= 2:
-        return sum(bribes)
 
     @lru_cache(maxsize=None)
     def solve_h(i, j):
@@ -14,5 +12,10 @@ def solve(bribes):
     return solve_h(0, len(bribes))
 
 
-print([20 - i // 2 for i in range(16)])
-print(solve([20 - i // 2 for i in range(16)]))
+if __name__ == '__main__':
+    bribes = [20 - i // 2 for i in range(16)]
+    print(bribes)
+    print(solve(bribes))
+    print(solve(bribes[1:4]))
+    print(solve(bribes[7:]))
+    print(solve(bribes[:0]))

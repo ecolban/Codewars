@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="Python 3.7 (Codewars)" project-jdk-type="Python SDK">
+  <component name="ProjectResources">
+    <resource url="http://www.drawmetry.com" location="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" project-jdk-name="Pipenv (Codewars)" project-jdk-type="Python SDK">
     <output url="file://$PROJECT_DIR$/kotlin_code/out" />
+  </component>
+  <component name="SuppressKotlinCodeStyleNotification">
+    <option name="disableForAll" value="true" />
   </component>
 </project>

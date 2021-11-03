@@ -37,8 +37,8 @@ def is_prefix(freq_count, n):
         return True
     if len(freq_count) == 2:
         mx, mn = max(freq_count.keys()), min(freq_count.keys())
-        return mn == 1 and freq_count[1] == 1\
-            or mx == mn + 1 and freq_count[mx] == 1
+        return mn == 1 and freq_count[1] == 1 \
+               or mx == mn + 1 and freq_count[mx] == 1
     return False
 
 
@@ -56,6 +56,20 @@ def largest_rectangle_in_histogram(histogram):
     return res
 
 
+def largest_square_in_histogram(histogram):
+    res, corners = 0, [(0, 0)]
+    histogram.append(0)
+
+    for i, h in enumerate(histogram):
+        j = i
+        while h < corners[-1][1]:
+            j, k = corners.pop()
+            res = max(res, min(i - j, k))
+        if h > corners[-1][1]:
+            corners.append((j, h))
+    return res * res
+
+
 def largest_rect_in_matrix(matrix):
     histo = [0] * len(matrix[0])
     res = 0
@@ -67,15 +81,17 @@ def largest_rect_in_matrix(matrix):
 
 if __name__ == "__main__":
     # print(Solution().maxEqualFreq([1, 2]))
-    # print(largest_rectangle_in_histogram([9, 7, 5, 4, 2, 5, 6, 7, 7, 5, 7, 6, 4, 4, 3, 2]))
-    matrix = "X"
-# XX  X  XXX"""
-#  XX XX  X
-# XX XX X XX
-# XXX XXXXXX
-#  XXX   XXX"""
+
+    matrix = \
+        """\
+X___X__X_X
+_XX_XX__XX
+XX_XX_X_XX
+XXX__XX_XX
+_XXX____XX"""
     matrix = [list(row) for row in matrix.split('\n')]
     print(matrix)
-#     matrix = [[]]
     print(*matrix, sep='\n')
     print(largest_rect_in_matrix(matrix))
+    print(largest_rectangle_in_histogram([2, 3, 5, 4]))
+

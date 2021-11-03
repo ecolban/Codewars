@@ -1,4 +1,3 @@
-
 # def prime_factors(n):
 #     """Return a list of prime numbers that divide n in ascending order. For example,
 #     prime_factors(12) returns [2, 2, 3]."""
@@ -88,3 +87,9 @@ def largest_prime_factor(n):
         else:
             factor = factor + (1 if factor == 2 else 2)
     return n if n > 1 else factor
+
+
+if __name__ == '__main__':
+    for i in range(1, 6):
+        n = 2 ** (2 ** i) + 1
+        print(i, n, prime_factors(n))
