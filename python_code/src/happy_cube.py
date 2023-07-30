@@ -1,8 +1,11 @@
+import csv
 from enum import Enum
-from itertools import groupby, combinations
+from functools import reduce
+from itertools import groupby, combinations, count
+from operator import or_
 from random import shuffle
 from time import time
-from typing import Optional
+from typing import Optional, Iterable
 
 N, E, S, W = 0, 1, 2, 3
 
@@ -236,196 +239,6 @@ class Pads(Enum):
     01100
     """
 
-    OLD_BLUE = """
-    11011
-    11110
-    01111
-    11110
-    01010
-    
-    00101
-    11111
-    01110
-    11111
-    01010
-    
-    01011
-    01111
-    11110
-    01111
-    01010
-    
-    00100
-    01110
-    11111
-    01110
-    00100
-    
-    10101
-    11111
-    01110
-    11111
-    10101
-    
-    00100
-    01111
-    11110
-    01111
-    00100
-    """
-
-    OLD_ORANGE = """
-    01010
-    11110
-    01111
-    01110
-    00100
-    
-    01100
-    11110
-    01111
-    11110
-    01011
-    
-    10101
-    11111
-    01110
-    11111
-    00100
-    
-    11011
-    01110
-    11110
-    01111
-    11010
-    
-    00100
-    11111
-    11111
-    01110
-    00100
-    
-    01010
-    01111
-    01110
-    11111
-    10101
-    """
-
-    OLD_YELLOW = """
-    11010
-    01110
-    11111
-    01110
-    01010
-    
-    01011
-    11110
-    01111
-    11110
-    00100
-    
-    00101
-    11111
-    01110
-    11111
-    10101
-    
-    00101
-    11111
-    01111
-    11110
-    10100
-    
-    01010
-    01111
-    01110
-    11111
-    10100
-    
-    01010
-    01111
-    11110
-    01111
-    00100
-    """
-
-    OLD_PURPLE = """
-    00010
-    01111
-    11110
-    01111
-    00100
-    
-    11000
-    01111
-    11111
-    01110
-    01010
-    
-    01011
-    01111
-    01111
-    11110
-    00100
-    
-    11010
-    01110
-    11110
-    01111
-    01011
-    
-    10100
-    11110
-    11111
-    01111
-    01101
-    
-    11011
-    11110
-    01111
-    01110
-    01010
-    """
-
-    OLD_RED = """
-    00100
-    11110
-    01111
-    11110
-    00100
-    
-    10100
-    11111
-    01110
-    11111
-    00110
-    
-    11011
-    01110
-    11111
-    01110
-    01100
-    
-    01010
-    01111
-    11110
-    01111
-    00010
-    
-    11000
-    01110
-    11111
-    01110
-    11010
-    
-    10011
-    11111
-    01110
-    11111
-    01101
-    """
-
     def to_list(self):
         v = self.value.strip('\n')
         lines = v.split('\n')
@@ -444,7 +257,6 @@ PROBLEM1 = {
     4: ((2, S), (3, S), (5, N), (1, S)),
     5: ((4, S), (3, E), (0, N), (1, W)),
 }
-
 # N, E, S, W = 0, 1, 2, 3
 #  01
 # 2345
@@ -488,7 +300,6 @@ PROBLEM3 = {
     16: ((13, E), (7, E), (17, E), (15, E)),
     17: ((15, S), (16, S), (2, N), (14, S)),
 }
-
 #   01
 #   23
 # 456789
@@ -497,7 +308,6 @@ PROBLEM3 = {
 #   ij
 #   kl
 #   mn
-
 PROBLEM4 = {
     0: ((22, S), (1, W), (2, N), (4, N)),
     1: ((23, S), (9, N), (3, N), (0, E)),
@@ -525,6 +335,7 @@ PROBLEM4 = {
     23: ((21, S), (9, E), (1, N), (22, E)),  # n
 }
 
+""" Pyramid """
 PROBLEM5 = {
     0: ((25, S), (3, N), (2, N), (1, N)),
     1: ((0, W), (2, W), (4, W), (5, N)),
@@ -554,6 +365,7 @@ PROBLEM5 = {
     25: ((24, S), (18, E), (0, N), (6, W)),
 }
 
+""" Crow foot """
 PROBLEM6 = {
     0: ((29, S), (3, N), (2, N), (1, N)),
     1: ((0, W), (2, W), (4, W), (5, N)),
@@ -586,6 +398,13 @@ PROBLEM6 = {
     28: ((25, E), (18, E), (29, E), (27, E)),
     29: ((27, S), (28, S), (0, N), (26, S)),
 }
+
+
+def get_edges(problem):
+    sides = {0: 'N', 1: 'E', 2: 'S', 3: 'W'}
+    return {'-'.join((min(f'{tile1}{sides[side1]}', f'{tile2}{sides[side2]}'),
+                      max(f'{tile1}{sides[side1]}', f'{tile2}{sides[side2]}')))
+            for tile1, neighbors in problem.items() for side1, (tile2, side2) in enumerate(neighbors)}
 
 
 def problem_len(problem):
@@ -654,121 +473,70 @@ class Piece:
         self._index = index
         self._orientation = Orientation.IDENTITY
         m = [list(s.strip(' ')) for s in pattern.strip().split('\n')]
-        self._north = int(''.join(i for i in m[0]), 2)
-        self._north_inv = int(''.join(i for i in reversed(m[0])), 2)
-        self._east = int(''.join(row[-1] for row in m), 2)
-        self._east_inv = int(''.join(row[-1] for row in reversed(m)), 2)
-        self._south = int(''.join(reversed(m[-1])), 2)
-        self._south_inv = int(''.join(m[-1]), 2)
-        self._west = int(''.join(row[0] for row in reversed(m)), 2)
-        self._west_inv = int(''.join(row[0] for row in m), 2)
+        self._full = ((int(''.join(i for i in m[0]), 2) << 11) |
+                      (int(''.join(row[-1] for row in m), 2) << 7) |
+                      (int(''.join(reversed(m[-1])), 2) << 3) |
+                      (int(''.join(row[0] for row in reversed(m)), 2) >> 1))
+        self._full_inv = bit_reversal(self._full, 16)
 
     def set_orientation(self, orientation):
         self._orientation = orientation
 
     @property
+    def full(self):
+        match self._orientation:
+            case Orientation.IDENTITY:
+                return self._full
+            case Orientation.R1:
+                return circular_lshift(self._full, 12, 16)
+            case Orientation.R2:
+                return circular_lshift(self._full, 8, 16)
+            case Orientation.R3:
+                return circular_lshift(self._full, 4, 16)
+            case Orientation.F:
+                return circular_lshift(self._full_inv, 11, 16)
+            case Orientation.R1F:
+                return circular_lshift(self._full_inv, 7, 16)
+            case Orientation.R2F:
+                return circular_lshift(self._full_inv, 3, 16)
+            case Orientation.R3F:
+                return circular_lshift(self._full_inv, -1, 16)
+
+    @property
+    def full_inv(self):
+        return bit_reversal(self.full, 16)
+
+    @property
     def north(self):
-        return {
-            Orientation.IDENTITY: self._north,
-            Orientation.R1: self._west,
-            Orientation.R2: self._south,
-            Orientation.R3: self._east,
-            Orientation.F: self._north_inv,
-            Orientation.R1F: self._east_inv,
-            Orientation.R2F: self._south_inv,
-            Orientation.R3F: self._west_inv,
-        }[self._orientation]
+        return (self.full >> 11) & ((1 << 5) - 1)
 
     @property
     def east(self):
-        return {
-            Orientation.IDENTITY: self._east,
-            Orientation.R1: self._north,
-            Orientation.R2: self._west,
-            Orientation.R3: self._south,
-            Orientation.F: self._west_inv,
-            Orientation.R1F: self._north_inv,
-            Orientation.R2F: self._east_inv,
-            Orientation.R3F: self._south_inv,
-        }[self._orientation]
+        return (self.full >> 7) & ((1 << 5) - 1)
 
     @property
     def south(self):
-        return {
-            Orientation.IDENTITY: self._south,
-            Orientation.R1: self._east,
-            Orientation.R2: self._north,
-            Orientation.R3: self._west,
-            Orientation.F: self._south_inv,
-            Orientation.R1F: self._west_inv,
-            Orientation.R2F: self._north_inv,
-            Orientation.R3F: self._east_inv,
-        }[self._orientation]
+        return (self.full >> 3) & ((1 << 5) - 1)
 
     @property
     def west(self):
-        return {
-            Orientation.IDENTITY: self._west,
-            Orientation.R1: self._south,
-            Orientation.R2: self._east,
-            Orientation.R3: self._north,
-            Orientation.F: self._east_inv,
-            Orientation.R1F: self._south_inv,
-            Orientation.R2F: self._west_inv,
-            Orientation.R3F: self._north_inv,
-        }[self._orientation]
+        return circular_lshift(self.full, 1, 16) & ((1 << 5) - 1)
 
     @property
     def north_inv(self):
-        return {
-            Orientation.IDENTITY: self._north_inv,
-            Orientation.R1: self._west_inv,
-            Orientation.R2: self._south_inv,
-            Orientation.R3: self._east_inv,
-            Orientation.F: self._north,
-            Orientation.R1F: self._east,
-            Orientation.R2F: self._south,
-            Orientation.R3F: self._west,
-        }[self._orientation]
+        return self.full_inv & ((1 << 5) - 1)
 
     @property
     def east_inv(self):
-        return {
-            Orientation.IDENTITY: self._east_inv,
-            Orientation.R1: self._north_inv,
-            Orientation.R2: self._west_inv,
-            Orientation.R3: self._south_inv,
-            Orientation.F: self._west,
-            Orientation.R1F: self._north,
-            Orientation.R2F: self._east,
-            Orientation.R3F: self._south,
-        }[self._orientation]
+        return (self.full_inv >> 4) & ((1 << 5) - 1)
 
     @property
     def south_inv(self):
-        return {
-            Orientation.IDENTITY: self._south_inv,
-            Orientation.R1: self._east_inv,
-            Orientation.R2: self._north_inv,
-            Orientation.R3: self._west_inv,
-            Orientation.F: self._south,
-            Orientation.R1F: self._west,
-            Orientation.R2F: self._north,
-            Orientation.R3F: self._east,
-        }[self._orientation]
+        return (self.full_inv >> 8) & ((1 << 5) - 1)
 
     @property
     def west_inv(self):
-        return {
-            Orientation.IDENTITY: self._west_inv,
-            Orientation.R1: self._south_inv,
-            Orientation.R2: self._east_inv,
-            Orientation.R3: self._north_inv,
-            Orientation.F: self._east,
-            Orientation.R1F: self._south,
-            Orientation.R2F: self._west,
-            Orientation.R3F: self._north
-        }[self._orientation]
+        return circular_lshift(self.full_inv, 4, 16) & ((1 << 5) - 1)
 
     @property
     def color(self):
@@ -782,15 +550,8 @@ class Piece:
         return self.north, self.east, self.south, self.west
 
     def get_corner(self, corner):
-        match corner:
-            case 0:
-                return self.west & 1
-            case 1:
-                return self.north & 1
-            case 2:
-                return self.east & 1
-            case 3:
-                return self.south & 1
+        mask = (1 << (15 - 4 * corner))
+        return 1 if self.full & mask == mask else 0
 
     def len_corners(self):
         return sum(side & 1 for side in self.sides())
@@ -837,99 +598,218 @@ class Piece:
         edge_len = sum(n & m > 0 for n in self.sides() for m in (8, 4, 2, 1))
         return edge_len + 9
 
-    @staticmethod
-    def make_pieces(color: Pads):
-        return [Piece(rows, color.name.lower(), index=i) for i, rows in enumerate(color.to_list())]
+
+def make_pieces(pad: Pads):
+    return [Piece(rows, color=pad.name.lower(), index=i) for i, rows in enumerate(pad.to_list())]
 
 
-def solve(problem, pieces: list[Piece]):
-    shape_corners = get_shape_corners(problem)
+def corners(piece: Piece) -> int:
+    return sum((8 << i) & piece.full == (8 << i) for i in range(0, 16, 4))
+
+
+def mid_cubits(piece: Piece) -> int:
+    return sum(((2 << i) & piece.full == (2 << i) for i in range(0, 16, 4)))
+
+
+def other_cubits(piece: Piece) -> int:
+    return sum(((1 << i) & piece.full == (1 << i) for i in range(0, 16, 2)))
+
+
+def filter_pieces(num_tiles: int, num_corners, pieces: Iterable[Piece]):
+    for pcs in combinations(pieces, num_tiles):
+        if (
+                sum(corners(pc) for pc in pcs) == num_corners and
+                sum(mid_cubits(pc) for pc in pcs) == 2 * num_tiles and
+                sum(other_cubits(pc) for pc in pcs) == 4 * num_tiles
+        ):
+            yield pcs
+
+
+def bit_reversal(n: int, num_bits: int):
+    if n == 0: return 0
+    d = 1 << (num_bits - 1)
+    return reduce(or_, (d // b for i in range(num_bits) if (b := n & (1 << i)) > 0))
+
+
+def circular_lshift(n, m, num_bits):
+    """Returns n <<< m """
+    m %= num_bits
+    if m == 0: return n
+    n <<= m
+    mask = ((1 << m) - 1) << num_bits
+    return ((mask & n) >> num_bits) | n & ((1 << num_bits) - 1)
+
+
+def min_tile(rows, num_pieces):
+    min_tile, min_count = 0, num_pieces * 8
+    for tile, g in groupby(rows, key=lambda row: row[0] // (num_pieces * 8)):
+        n = sum(1 for _ in g)
+        assert n > 0
+        if n < min_count:
+            min_tile, min_count = tile, n
+    return min_tile, min_count
+
+
+def solve(tiles: list[int], rows: list[list[int]], solution: list[list[int]], num_pieces, f):
+    """
+    Generator function that finds all exact covers of arg cubits with rows from arg rows, and yields lists
+    where each list contains the rows in arg solution extended with a cover of arg cubits.
+
+    This function may temporarily append rows to arg solution, but will pop them off again such that when
+    the function returns, arg solution is unchanged.
+
+    :param tiles: a list of tiles to cover. This list contains only cubits that are not in any word in arg solution
+    :param rows: a list of rows from which words are drawn to create each cover. These words contain only cubits that are in arg cubits.
+    :param solution: a list of words to prepend to each cover found
+    :return: None
+    """
+    if not tiles:
+        # No more tiles to cover; we're done.
+        yield solution.copy()
+    elif not rows:
+        return
+    else:
+        # heuristic: start with the tile that occurs in the least number of rows
+        num_rows_per_tile = num_pieces * 8
+        t0, _ = min_tile(rows, num_pieces)
+        remaining_tiles = [tile for tile in tiles if tile != t0]
+        # Loop invariant: Args tiles, rows, and solution, are not mutated
+        rows_for_tile = [row for row in rows if row[0] // num_rows_per_tile == t0]
+
+        for row in rows_for_tile:
+            print('Select row:', str_row(row, num_pieces), file=f)
+            piece_num, orientation = divmod(row[0] % num_rows_per_tile, 8)
+            solution.append(row)
+            remaining_rows = [r for r in rows if (
+                    r[0] // num_rows_per_tile != t0 and
+                    r[0] % num_rows_per_tile // 8 != piece_num and
+                    all(row[i] & r[i] == 0 for i in range(1, len(row)))
+            )]
+            if len(remaining_rows) >= len(remaining_tiles):
+                yield from solve(remaining_tiles, remaining_rows, solution, num_pieces, f)
+            solution.pop()
+
+
+def make_row(piece: Piece, orientation: Orientation, tile, problem, shape_corners, row_num: int) -> list[int]:
     corner_lookup = get_corner_lookup(shape_corners)
-    solution = {k: None for k in problem}
-    remaining_pieces: list[Piece] = pieces
-
-    def filter_pieces():
-        num_tiles = len(problem)
-        len_tiles = num_tiles * 15 + len(shape_corners)
-        for pcs in combinations(pieces, num_tiles):
-            if sum(len(pc) for pc in pcs) == len_tiles and sum(pc.len_corners() for pc in pcs) == len(shape_corners):
-                yield pcs
-
-
-
-    def fit_solution(tile: int, piece: Piece, orientation: Orientation):
-        piece.set_orientation(orientation)
-        sides = (piece.north, piece.east, piece.south, piece.west)
-
-        def check_corner(corner):
-            neighbors = corner_lookup[(tile, corner)]
-            solved_neighbors = [(t, c) for t, c in neighbors if solution[t] is not None]
-            last = len(solved_neighbors) == len(neighbors)
-            corner_cover = sum(solution[t].get_corner(c) for t, c in solved_neighbors) + piece.get_corner(corner)
-            return corner_cover == 1 if last else corner_cover <= 1
-
-        return (
-                all(pieces_fit(side, p.get_side_inv(s)) for side, (t, s) in zip(sides, problem[tile])
-                    if (p := solution[t]) is not None) and
-                all(check_corner(corner) for corner in range(4))
-        )
-
-    def solution_gen():
-        nonlocal remaining_pieces
-        if not any(v is None for v in solution.values()):
-            yield {tile: piece for tile, piece in solution.items()}, remaining_pieces
-            return
-        # if not remaining_pieces: return
-        tile = min(
-            (tile for tile, v in solution.items() if v is None),
-            key=lambda tile: sum(fit_solution(tile, piece, orientation)
-                                 for piece in remaining_pieces for orientation in Orientation),
-        )
-        possible: list[tuple[Piece, Orientation]] = [
-            (piece, orientation) for piece in remaining_pieces for orientation in Orientation
-            if fit_solution(tile, piece, orientation)
-        ]
-        for piece, orientation in possible:
-            piece.set_orientation(orientation)
-            solution[tile] = piece
-            remaining_pieces_ = remaining_pieces
-            remaining_pieces = [pc for pc in remaining_pieces if pc != piece]
-            yield from solution_gen()
-            remaining_pieces = remaining_pieces_
-        solution[tile] = None
-
-    for pieces_ in filter_pieces():
-        remaining_pieces = pieces_
-        yield from solution_gen()
+    piece.set_orientation(orientation)
+    src_side = [piece.north_inv, piece.east_inv, piece.south_inv, piece.west_inv]
+    target_shifts = [11, 7, 3, -1]
+    row = [0] * len(problem)
+    row[tile] = piece.full
+    for i, (t, s) in enumerate(problem[tile]):
+        row[t] = circular_lshift(src_side[i], target_shifts[s], 16)
+    for i in range(4):
+        if piece.get_corner(i) == 1:
+            for t, c in corner_lookup[(tile, i)]:
+                row[t] |= 1 << (15 - 4 * c)
+    # row.append(pieces.index(piece))
+    return [row_num] + row
 
 
-def pieces_fit(edge1, edge2):
-    return edge1 & edge2 == 0 and (edge1 ^ edge2) & 14 == 14
-
-
-def main_1():
-    pads = [
-        # Pads.YELLOW,
-        Pads.GREEN,
-        # Pads.PINK,
-        # Pads.RED,
-        # Pads.PURPLE,
-        Pads.BLUE,
+def solve1(problem, pieces: list[Piece], hints=None):
+    shape_corners = get_shape_corners(problem)
+    row_numbers = count()
+    tiles = list(range(len(problem)))
+    rows = [
+        make_row(pc, orientation, tile, problem, shape_corners, next(row_numbers))
+        for tile in tiles
+        for pc in pieces
+        for orientation in Orientation
     ]
-    problem = PROBLEM2
-    pieces = [piece for pad in pads for piece in Piece.make_pieces(pad)]
-    shuffle(pieces)
-    start = time()
-    solutions = solve(problem, pieces)
-    try:
-        solution, remaining_pieces = next(solutions)
-        for tile, piece in solution.items():
-            print(f"{tile}({piece.color}[{piece.index}])\n{piece}")
-    except StopIteration:
-        print('No solution found')
+    with open('log_file.txt', mode='w') as f:
+        yield from solve(tiles, rows, [], len(pieces), f)
 
-    print(f'time = {round((time() - start) * 1000)} ms')
+
+def str_row(row, num_pieces):
+    tile, r = divmod(row[0], num_pieces * 8)
+    piece_num, orientation = divmod(r, 8)
+    w = [f'{bin(t)[2:].zfill(16)}' for t in row[1:]]
+    return f'{tile}-{piece_num}-{orientation}, {w}'
+
+
+def row_to_tile_map(row, pieces, tiles):
+    piece = pieces[row[0] % len(pieces) // 8]
+    for tile in tiles:
+        for orientation in Orientation:
+            piece.set_orientation(orientation)
+            if piece.full == row[tile + 1]:
+                return (tile, piece)
+
+
+def possible_pieces_problem6():
+    problem = PROBLEM6
+    all_pieces = [piece for pad in Pads for piece in make_pieces(pad)]
+    # shuffle(all_pieces)
+    shape_corners = get_shape_corners(problem)
+    with open('possible_piece_selection_problem6.csv', mode='w') as f:
+        writer = csv.writer(f)
+        for pcs in filter_pieces(len(problem), len(shape_corners), all_pieces):
+            print('*', end='')
+            writer.writerow(f'{pc.color}[{pc.index}]' for pc in pcs)
+
+
+def solve_problem6():
+    start = time()
+    d = {
+        f'{p.color}[{p.index}]': p
+        for pad in Pads for p in make_pieces(pad)
+    }
+    with open('possible_piece_selection_problem6.csv', 'r') as f:
+        reader = csv.reader(f)
+        pieces = [[d[ps] for ps in row] for row in list(reader)]
+    try:
+        solution = next(solve1(PROBLEM6, pieces[5]))
+    except StopIteration:
+        pass
+    else:
+        d = dict(row_to_tile_map(row, pieces, PROBLEM6.keys()) for row in solution)
+        for tile in sorted(d.keys()):
+            piece = d[tile]
+            print(f"{tile}: {piece.color}[{piece.index}]\n{piece}")
+    print(f'{(time() - start):.3f}')
+
+
+def solve_problem(problem, pieces, hints=None):
+    start = time()
+    try:
+        solution = next(solve1(problem, pieces))
+    except StopIteration:
+        pass
+    else:
+        d = {}
+        rows_per_tile = len(pieces) * 8
+        orientations = list(Orientation)
+        for row in solution:
+            print(str_row(row, len(pieces)))
+            tile = row[0] // rows_per_tile
+            piece_num, orientation_num = divmod(row[0] % rows_per_tile, 8)
+            piece = pieces[piece_num]
+            orientation = orientations[orientation_num]
+            piece.set_orientation(orientation)
+            d[tile] = piece
+        for tile in range(len(problem)):
+            piece = d[tile]
+            print(f'{tile}: {piece.color}[{piece.index}]\n{piece}')
+    print(f'{(time() - start):.3f}')
+
+
+def solve_problem1():
+    start = time()
+    pieces = make_pieces(Pads.GREEN)
+    # shuffle(pieces)
+    try:
+        solution = next(solve1(PROBLEM1, pieces))
+    except StopIteration:
+        print('No solution found.')
+    else:
+        for row in solution:
+            print(str_row(row, 6))
+    print(f'{(time() - start):.3f}')
 
 
 if __name__ == '__main__':
-    main_1()
+    pieces = [p for pad in Pads for p in make_pieces(pad)]
+    # pieces = make_pieces(Pads.GREEN) + make_pieces(Pads.BLUE)
+    shuffle(pieces)
+    solve_problem(PROBLEM4, pieces)
