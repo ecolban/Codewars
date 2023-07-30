@@ -7,7 +7,6 @@ from math import gcd
 from operator import mul
 from random import randrange
 
-import sympy
 
 
 def gen_prime_factors(n):

@@ -57,27 +57,5 @@ def gen_prime_factors(n):
         yield n
 
 
-def power_cycle(base, mod):
-    return find_cycle(lambda n: n * base % mod, 1)
-
-
-def find_cycle(f, start):
-    """Returns the start of a cycle, and the cycle length. """
-    tortoise, hare = start, f(start)
-    while tortoise != hare:
-        hare = f(f(hare))
-        tortoise = f(tortoise)
-    tortoise = start
-    hare = f(hare)
-    while tortoise != hare:
-        tortoise = f(tortoise)
-        hare = f(hare)
-    tortoise, lamb = f(tortoise), 1
-    while tortoise != hare:
-        tortoise = f(tortoise)
-        lamb += 1
-    return hare, lamb
-
-
 if __name__ == "__main__":
     print([tower(89, i, 100000000000000) for i in range(1, 21)])
