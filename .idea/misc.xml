@@ -3,7 +3,7 @@
   <component name="ProjectResources">
     <resource url="http://www.drawmetry.com" location="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" project-jdk-name="Pipenv (Codewars)" project-jdk-type="Python SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" project-jdk-name="Python 3.11" project-jdk-type="Python SDK">
     <output url="file://$PROJECT_DIR$/kotlin_code/out" />
   </component>
   <component name="SuppressKotlinCodeStyleNotification">
