@@ -32,7 +32,8 @@ player `i` should receive. The entries of `f` must not have a common divisor gre
 """
 
 
-def divide_pot1(num_rounds, wins):
+def divide_pot(num_rounds, wins):
+    """Uses recursion and may result in stack overflow."""
     score = tuple(num_rounds - w for w in wins)
     num_players = len(score)
 
@@ -137,6 +138,7 @@ def divide_pot4(num_rounds, wins):
     score = [num_rounds - win for win in wins]
     num_players = len(score)
 
+    @cache
     def player_0_part(score_: tuple[int, ...]) -> int:
         player_0, *others = score_
 

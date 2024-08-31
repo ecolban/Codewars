@@ -5,10 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a355355-927b-40d1-b8dd-b73f1ecf6768" name="Default" comment="More stuff">
-      <change afterPath="$PROJECT_DIR$/python_code/src/unfinished_game_lachesism.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/assets/count_rectangles.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/assets/set_closure_duplicates.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/src/caesar_cipher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/src/connectivity_components.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/src/elementary_arithmetic_carries_count.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/src/noobify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/src/ook.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/src/prime_number_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/src/prime_number_generator2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/src/puzzle_14_15.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/src/roman_numerals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/src/set_closure.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_code/src/count_rectangles.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/count_rectangles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_code/src/morse_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/morse_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_code/src/pick_until_match.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/pick_until_match.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_code/src/prime_factorization.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/prime_factorization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_code/src/prime_gaps.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/prime_gaps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_code/src/tower.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/tower.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python_code/src/unfinished_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/unfinished_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_code/test/test_unfinished_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/test/test_unfinished_game.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +54,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ecolban"
+  }
+}]]></component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -43,6 +68,12 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ecolban/Codewars",
+    "accountId": "8c0e0c57-01dc-4c62-9882-d9d511af1a8c"
+  }
+}]]></component>
   <component name="JupyterTrust" id="1e84877f-953a-477c-a583-e33ef9f270c0" />
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -59,13 +90,44 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Doctest via pytest in prime_factorization.py.executor": "Run",
+    "Python tests.prime_factorization.py.executor": "Run",
+    "Python tests.pytest for connectivity_components.test_connecticity_components.executor": "Run",
+    "Python tests.pytest for graycode.test_gray_code.executor": "Run",
+    "Python tests.pytest for josephus.test_survivor.executor": "Run",
+    "Python tests.pytest for prime_number_generator2.test_wsieve.executor": "Run",
+    "Python tests.pytest for test_thread_locals.test_get_thread_session_mapping_async.executor": "Debug",
+    "Python tests.pytest for test_thread_locals.test_h.executor": "Run",
+    "Python tests.pytest for test_thread_locals.test_h_2.executor": "Debug",
+    "Python tests.pytest for test_thread_locals.test_withdrawals.executor": "Debug",
     "Python tests.pytest for test_unfinished_game.test_few_players_few_rounds.executor": "Run",
     "Python tests.pytest for test_unfinished_game.test_few_players_many_rounds.executor": "Run",
     "Python tests.pytest for test_unfinished_game.test_many_players_few_rounds.executor": "Run",
     "Python tests.pytest for test_unfinished_game.test_multinomial.executor": "Run",
     "Python tests.pytest for test_unfinished_game.test_simple_cases.executor": "Run",
+    "Python tests.pytest in prime_factorization.py.executor": "Run",
+    "Python tests.pytest in test_thread_locals.py.executor": "Run",
     "Python tests.pytest in test_unfinished_game.py.executor": "Run",
+    "Python.caesar_cipher.executor": "Run",
+    "Python.count_rectangles.executor": "Run",
+    "Python.elementary_arithmetic_carries_count.executor": "Run",
+    "Python.graphics.executor": "Run",
+    "Python.graycode.executor": "Run",
+    "Python.josephus.executor": "Run",
+    "Python.metaclass.executor": "Run",
+    "Python.morse_code.executor": "Run",
+    "Python.mystery_function.executor": "Run",
+    "Python.noobify.executor": "Run",
+    "Python.ook.executor": "Run",
+    "Python.persistence.executor": "Run",
+    "Python.prime_factorization.executor": "Run",
+    "Python.prime_factorization_poor.executor": "Run",
+    "Python.prime_number_generator.executor": "Run",
+    "Python.puzzle_14_15.executor": "Run",
+    "Python.roman_numerals.executor": "Run",
     "Python.scratch_1.executor": "Run",
+    "Python.set_closure.executor": "Debug",
+    "Python.tower.executor": "Run",
     "Python.unfinished_game.executor": "Run",
     "Python.unfinished_game_lachesism_2.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -103,8 +165,8 @@
       <recent name="$PROJECT_DIR$/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_unfinished_game.py">
-    <configuration name="unfinished_game_lachesism_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.noobify">
+    <configuration name="noobify" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,7 +179,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/unfinished_game_lachesism_2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/noobify.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -126,7 +188,52 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_unfinished_game.test_many_players_few_rounds" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="persistence" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_code" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/persistence.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prime_factorization" type="PythonConfigurationType" factoryName="Python">
+      <module name="Codewars" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Pipenv (Codewars)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/prime_factorization.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_thread_locals.test_get_thread_session_mapping_async" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,11 +246,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_unfinished_game.test_many_players_few_rounds&quot;" />
+      <option name="_new_target" value="&quot;test_thread_locals.test_get_thread_session_mapping_async&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_unfinished_game.test_multinomial" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_thread_locals.test_h" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -156,11 +263,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_unfinished_game.test_multinomial&quot;" />
+      <option name="_new_target" value="&quot;test_thread_locals.test_h&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_unfinished_game.test_simple_cases" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_thread_locals.test_withdrawals" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -173,41 +280,25 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_unfinished_game.test_simple_cases&quot;" />
+      <option name="_new_target" value="&quot;test_thread_locals.test_withdrawals&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest in test_unfinished_game.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="python_code" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/python_code/test/test_unfinished_game.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.unfinished_game_lachesism_2" />
-      <item itemvalue="Python tests.pytest for test_unfinished_game.test_multinomial" />
-      <item itemvalue="Python tests.pytest for test_unfinished_game.test_many_players_few_rounds" />
-      <item itemvalue="Python tests.pytest for test_unfinished_game.test_simple_cases" />
-      <item itemvalue="Python tests.pytest in test_unfinished_game.py" />
+      <item itemvalue="Python.prime_factorization" />
+      <item itemvalue="Python.noobify" />
+      <item itemvalue="Python.persistence" />
+      <item itemvalue="Python tests.pytest for test_thread_locals.test_get_thread_session_mapping_async" />
+      <item itemvalue="Python tests.pytest for test_thread_locals.test_h" />
+      <item itemvalue="Python tests.pytest for test_thread_locals.test_withdrawals" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest in test_unfinished_game.py" />
-        <item itemvalue="Python.unfinished_game_lachesism_2" />
-        <item itemvalue="Python tests.pytest for test_unfinished_game.test_multinomial" />
-        <item itemvalue="Python tests.pytest for test_unfinished_game.test_simple_cases" />
-        <item itemvalue="Python tests.pytest for test_unfinished_game.test_many_players_few_rounds" />
+        <item itemvalue="Python.noobify" />
+        <item itemvalue="Python.persistence" />
+        <item itemvalue="Python tests.pytest for test_thread_locals.test_withdrawals" />
+        <item itemvalue="Python tests.pytest for test_thread_locals.test_get_thread_session_mapping_async" />
+        <item itemvalue="Python tests.pytest for test_thread_locals.test_h" />
       </list>
     </recent_temporary>
   </component>
@@ -365,7 +456,31 @@
       <option name="project" value="LOCAL" />
       <updated>1725154546027</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="More stuff">
+      <option name="closed" value="true" />
+      <created>1725337948719</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1725337948719</updated>
+    </task>
+    <task id="LOCAL-00011" summary="More stuff">
+      <option name="closed" value="true" />
+      <created>1725337957495</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1725337957495</updated>
+    </task>
+    <task id="LOCAL-00012" summary="More stuff">
+      <option name="closed" value="true" />
+      <created>1725337966181</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1725337966181</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,11 +508,6 @@
           <url>file://$PROJECT_DIR$/python_code/test/test_sales_report.py</url>
           <line>50</line>
           <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/python_code/src/morse_code.py</url>
-          <line>65</line>
-          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/python_code/src/pick_until_match.py</url>
@@ -445,6 +555,70 @@
           <line>123</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/morse_code.py</url>
+          <line>104</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/elementary_arithmetic_carries_count.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="195" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/ook.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/ook.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/set_closure.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/count_rectangles.py</url>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/prime_factorization.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/prime_factorization.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/prime_number_generator.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="229" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/prime_number_generator.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="230" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/prime_number_generator.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="232" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/src/connectivity_components.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="235" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_code/test/test_thread_locals.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -454,6 +628,11 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="(mantissa - 1) / (mantissa + 1)" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

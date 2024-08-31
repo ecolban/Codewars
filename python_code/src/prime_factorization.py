@@ -2,7 +2,8 @@ import asyncio
 import time
 from collections import Counter
 from functools import reduce
-from itertools import chain, count, cycle, groupby, product
+from heapq import heappop, heappush
+from itertools import chain, count, cycle, groupby, product, accumulate
 from math import gcd
 from operator import mul
 from random import randrange
@@ -51,7 +52,8 @@ def make_gaps_2(n):
     k = next(loop_iter)
     prefix_out = (*prefix_in, k)
 
-    def loop_out_gen(k):
+    def loop_out_gen():
+        nonlocal k
         m = k
         for _ in range(len(loop_in) * (p - 1)):
             k = next(loop_iter)
@@ -61,7 +63,7 @@ def make_gaps_2(n):
                 k += m
             yield k
 
-    return prefix_out, tuple(loop_out_gen(k))
+    return prefix_out, tuple(loop_out_gen())
 
 
 def prime_factors(n):
@@ -262,9 +264,87 @@ def consec_kprimes(k, arr):
     return sum(i + 1 == j for i, j in zip(idx, idx[1:]))
 
 
+class Primes:
+
+    @staticmethod
+    def stream():
+        for p in (2, 3, 5, 7, 11, 13):
+            yield p
+        gaps = (
+            4, 2, 4, 6, 2, 6, 4, 2, 4, 6, 6, 2, 6, 4, 2, 6, 4, 6, 8, 4, 2, 4, 2, 4, 14, 4, 6, 2, 10,
+            2, 6, 6, 4, 2, 4, 6, 2, 10, 2, 4, 2, 12, 10, 2, 4, 2, 4, 6, 2, 6, 4, 6, 6, 6, 2, 6, 4, 2,
+            6, 4, 6, 8, 4, 2, 4, 6, 8, 6, 10, 2, 4, 6, 2, 6, 6, 4, 2, 4, 6, 2, 6, 4, 2, 6, 10, 2, 10,
+            2, 4, 2, 4, 6, 8, 4, 2, 4, 12, 2, 6, 4, 2, 6, 4, 6, 12, 2, 4, 2, 4, 8, 6, 4, 6, 2, 4, 6,
+            2, 6, 10, 2, 4, 6, 2, 6, 4, 2, 4, 2, 10, 2, 10, 2, 4, 6, 6, 2, 6, 6, 4, 6, 6, 2, 6, 4, 2,
+            6, 4, 6, 8, 4, 2, 6, 4, 8, 6, 4, 6, 2, 4, 6, 8, 6, 4, 2, 10, 2, 6, 4, 2, 4, 2, 10, 2, 10,
+            2, 4, 2, 4, 8, 6, 4, 2, 4, 6, 6, 2, 6, 4, 8, 4, 6, 8, 4, 2, 4, 2, 4, 8, 6, 4, 6, 6, 6, 2,
+            6, 6, 4, 2, 4, 6, 2, 6, 4, 2, 4, 2, 10, 2, 10, 2, 6, 4, 6, 2, 6, 4, 2, 4, 6, 6, 8, 4, 2, 6,
+            10, 8, 4, 2, 4, 2, 4, 8, 10, 6, 2, 4, 8, 6, 6, 4, 2, 4, 6, 2, 6, 4, 6, 2, 10, 2, 10, 2, 4,
+            2, 4, 6, 2, 6, 4, 2, 4, 6, 6, 2, 6, 6, 6, 4, 6, 8, 4, 2, 4, 2, 4, 8, 6, 4, 8, 4, 6, 2, 6,
+            6, 4, 2, 4, 6, 8, 4, 2, 4, 2, 10, 2, 10, 2, 4, 2, 4, 6, 2, 10, 2, 4, 6, 8, 6, 4, 2, 6, 4,
+            6, 8, 4, 6, 2, 4, 8, 6, 4, 6, 2, 4, 6, 2, 6, 6, 4, 6, 6, 2, 6, 6, 4, 2, 10, 2, 10, 2, 4, 2,
+            4, 6, 2, 6, 4, 2, 10, 6, 2, 6, 4, 2, 6, 4, 6, 8, 4, 2, 4, 2, 12, 6, 4, 6, 2, 4, 6, 2, 12,
+            4, 2, 4, 8, 6, 4, 2, 4, 2, 10, 2, 10, 6, 2, 4, 6, 2, 6, 4, 2, 4, 6, 6, 2, 6, 4, 2, 10, 6,
+            8, 6, 4, 2, 4, 8, 6, 4, 6, 2, 4, 6, 2, 6, 6, 6, 4, 6, 2, 6, 4, 2, 4, 2, 10, 12, 2, 4, 2,
+            10, 2, 6, 4, 2, 4, 6, 6, 2, 10, 2, 6, 4, 14, 4, 2, 4, 2, 4, 8, 6, 4, 6, 2, 4, 6, 2, 6, 6,
+            4, 2, 4, 6, 2, 6, 4, 2, 4, 12, 2, 12,
+        )
+        gap_i = 0
+        composites = [(169, 13)]
+        gaps_len = len(gaps)
+        sieve = [13]
+        pointers = {13: 0}
+
+        while True:
+            n, _ = composites[0]
+            p += gaps[gap_i]
+            gap_i = (gap_i + 1) % gaps_len
+            sieve.append(p)
+            if p < n:
+                yield p
+                pointers[p] = len(sieve) - 1
+                heappush(composites, (sieve[pointers[p]] * p, p))
+            elif p == n:
+                while composites[0][0] == n:
+                    _, m = heappop(composites)
+                    pointers[m] += 1
+                    heappush(composites, (sieve[pointers[m]] * m, m))
+
+
+LIMIT = 33_000_000
+
+
+def primes():
+    yield 2
+    sieve = list(range(3, LIMIT, 2))
+    for n in sieve:
+        if n > 0:
+            yield n
+            for j in range((n * n - 3) // 2, len(sieve), n):
+                sieve[j] = 0
+
+
+def main():
+    g = primes()
+    for _ in range(2_000_000 - 1):
+        next(g)
+    print(next(g))
+
+
+def main2():
+    def gen():
+        prefix, rest = make_gaps_2(3)
+        gaps = chain(prefix, cycle(rest))
+        n = 2
+        yield 2
+        for k in gaps:
+            n += k
+            yield n
+    g = gen()
+    print(list((i, n, prime_factors(n)) for n, i in zip(g, range(0, 100)) if not is_prime(n)))
+
+
 if __name__ == "__main__":
-    multi_threading_example()
-    print(count_k_primes(5, 1000, 1100))
-    print(puzzle(143))
-    g = make_gaps(1)
-    print(*(next(g) for _ in range(10)))
+    start = time.perf_counter()
+    main()
+    print(f'Time = {time.perf_counter() - start:.2f} s')

@@ -18,7 +18,13 @@ def gaps(p):
         yield 2
         while True:
             yield 4
-            yield
+            yield 2
+            yield 4
+            yield 2
+            yield 4
+            yield 6
+            yield 2
+            yield 6
     else:
         return chain((1,), cycle((2,)))
 

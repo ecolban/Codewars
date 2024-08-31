@@ -1,9 +1,10 @@
 from collections import Counter, defaultdict
-from itertools import combinations, groupby
+from collections.abc import Iterable
+from itertools import combinations
 from random import randrange
 
 
-def count_rects(points):
+def count_rects(points: Iterable[tuple[int, int]]) -> int:
     """
     Returns the number of rectangles that have their vertices on a given list of points.
     The given points have integer coordinates.
@@ -25,6 +26,7 @@ def get_rects(points):
     return ((x1, y1, x2, y2, x3, y3, x4, y4)
             for v in d.values() if len(v) > 1
             for (x1, y1, x3, y3), (x2, y2, x4, y4) in combinations(v, 2))
+
 
 # One line solution:
 # from collections import Counter as A
@@ -52,7 +54,8 @@ def make_svg(pts, file):
         print('''<?xml version="1.0" encoding="UTF-8"?>''', file=f)
         print(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}"'
               f' xmlns:xlink="http://www.w3.org/1999/xlink">', file=f)
-        print(f'<polygon stroke="#000000" fill="#ffffff" points="0 0 0 {height} {width} {height}, {width}, 0"/>', file=f)
+        print(f'<polygon stroke="#000000" fill="#ffffff" points="0 0 0 {height} {width} {height}, {width}, 0"/>',
+              file=f)
         for x1, y1, x2, y2, x3, y3, x4, y4 in get_rects(pts):
             print(((x1, y1), (x2, y2), (x3, y3), (x4, y4)))
             print(f'<polygon stroke="#999999" fill="none" points='
@@ -71,20 +74,32 @@ def gcd(a, b):
 
 def count_points(r2, odd=0):
     ps = []
-    for x in range(odd, int((r2/2)**0.5) + 1, 2):
-        y = int((r2 - x * x)**0.5)
+    for x in range(odd, int((r2 / 2) ** 0.5) + 1, 2):
+        y = int((r2 - x * x) ** 0.5)
         if x * x + y * y == r2:
             ps.append((x, y))
     return ps
 
 
 if __name__ == "__main__":
-    main(10, 30)
-
-
-
-
-# Given two points p1 = (x1, y1) and p2 = (x2, y2) on an m x n quadratic grid.
-# Write a function that returns the set of points on the grid that lie on the circle
-# with diameter p1, p2.
-
+    # main(10, 30)
+    for rect in get_rects([
+        (0, 3),
+        (1, 2), (1, 3), (1, 4),
+        (2, 1),
+        (3, 0), (3, 2),
+        (4, 2), (4, 3), (4, 4),
+        (5, 0), (5, 2), (5, 4),
+        (6, 1), (6, 3), (6, 4),
+        (7, 1), (7, 3), (7, 4),
+        (8, 2), (8, 4),
+        (9, 1)
+    ]):
+        print(f'        # {rect}')
+    # make_svg([
+    #     (1, 0), (4, 0),
+    #     (1, 1), (3, 1), (9, 1),
+    #     (0, 2), (4, 2), (5, 2), (6, 2), (9, 2),
+    #     (2, 3), (5, 3),
+    #     (1, 4), (2, 4), (4, 4), (5, 4), (9, 4)],
+    #     'grid.svg')

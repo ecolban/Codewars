@@ -11,7 +11,7 @@ def lcm(*nums):
 def h(meter_tuple):
     n = len(meter_tuple)
     if 0 in meter_tuple:
-        winning_meter = meter_tuple.index(0)
+        winning_meter = meter_tuple.idx(0)
         res = [1 if meter == winning_meter else 0 for meter in range(n)]
     else:
         probabilities = meter_tuple

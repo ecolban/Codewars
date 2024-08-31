@@ -11,6 +11,7 @@ pyperclip = "*"
 pytest = "*"
 scipy = "*"
 sympy ="*"
+pytest-asyncio = "*"
 
 [requires]
 python_version = "3.9"

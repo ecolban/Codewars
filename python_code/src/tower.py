@@ -81,3 +81,8 @@ def find_cycle(f, start):
 
 if __name__ == "__main__":
     print([tower(89, i, 100000000000000) for i in range(1, 21)])
+    print(tower(13, 3, 60))
+    print(pow(13, 16 + tower(13, 2, 16), 60))
+    print(pow(13, 30 + tower(13, 2, 30), 31))  # 13 ^ (30 + tower(13, 2, 30)) % 31
+    print(pow(13, 13 ** 13, 31))
+    print(pow(13, 13 ** 13, 60))
