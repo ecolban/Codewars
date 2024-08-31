@@ -1,6 +1,7 @@
+from collections import Counter
 from functools import reduce, cache
 from itertools import product
-from math import gcd
+from math import factorial, gcd, prod
 
 """
 ## Intro
@@ -31,23 +32,26 @@ player `i` should receive. The entries of `f` must not have a common divisor gre
 """
 
 
-def divide_pot(num_rounds, wins):
-    """Uses recursion and may result in stack overflow."""
+def divide_pot1(num_rounds, wins):
     score = tuple(num_rounds - w for w in wins)
     num_players = len(score)
 
     @cache
-    def h(score_):
-        e = sum(score_) - num_players
-        distr = [
-            [num_players ** e if j == i else 0 for j in range(len(score_))] if s - 1 == 0
+    def h(score_: tuple[int, ...]) -> int:
+        """Returns the part of the pot that player with score_[0] should receive."""
+        denominator = num_players ** (sum(score_) - num_players)
+        return sum(
+            (denominator if i == 0 else 0) if s == 1
             else h(tuple(s_ - 1 if i == j else s_ for j, s_ in enumerate(score_)))
             for i, s in enumerate(score_)
-        ]
-        return [sum(a) for a in zip(*distr)]
+        )
 
-    preliminary_result = h(score)
-    d = reduce(gcd, preliminary_result)
+    def swap(k):
+        return tuple(score[k] if i == 0 else score[0] if i == k else s
+                     for i, s in enumerate(score))
+
+    preliminary_result = [h(swap(k)) for k in range(len(score))]
+    d = gcd(*preliminary_result)
     return [x // d for x in preliminary_result]
 
 
@@ -75,11 +79,75 @@ def divide_pot2(num_rounds, wins):
     pascal = initialize_matrix(dimensions)
     for t in product(*(range(d + 1) for d in dimensions)):
         s = sum(e <= 0 for e in t)
-        if s <= 1:
-            v = ([num_dimensions ** (sum(t) - num_dimensions + 1) if e == 0 else 0 for e in t] if s == 1
-                 else [sum(a) for a in zip(*(matrix_get(pascal, [e_ - 1 if i == j else e_ for j, e_ in enumerate(t)])
-                                             for i, e in enumerate(t) if e > 0))])
+        denominator = num_dimensions ** (sum(t) - num_dimensions + 1)
+        if s == 1:
+            v = [denominator if e == 0 else 0 for e in t]
+            matrix_set(pascal, t, v)
+        elif s == 0:
+            v = [sum(a) for a in zip(*(matrix_get(pascal, [e_ - 1 if i == j else e_ for j, e_ in enumerate(t)])
+                                       for i, e in enumerate(t)))]
             matrix_set(pascal, t, v)
     prelim_result = matrix_get(pascal, dimensions)
     d = reduce(gcd, prelim_result)
     return [e // d for e in prelim_result]
+
+
+def divide_pot3(num_rounds, wins):
+    dimensions = [num_rounds - w for w in wins]
+    """Builds an N-dimensional "Pascal triangle" using iteration."""
+    num_dimensions = len(dimensions)
+    max_dimension = max(dimensions)
+
+    def initialize_matrix(num_d):
+        return 0 if num_d == 0 else [initialize_matrix(num_d - 1) for _ in range(max_dimension + 1)]
+
+    pascal = initialize_matrix(num_dimensions)
+    for t in product(*(range(max_dimension + 1) for _ in dimensions)):
+        s = sum(e <= 0 for e in t)
+        denominator = num_dimensions ** (sum(t) - num_dimensions + 1)
+        if s == 1 and t[0] == 0:
+            v = denominator
+            matrix_set(pascal, t, v)
+        elif s == 0:
+            v = sum(matrix_get(pascal, [e_ - 1 if i == j else e_ for j, e_ in enumerate(t)])
+                    for i, e in enumerate(t))
+            matrix_set(pascal, t, v)
+
+    def swap(i):
+        dimensions[0], dimensions[i] = dimensions[i], dimensions[0]
+        return dimensions
+
+    prelim_result = [matrix_get(pascal, swap(i)) for i in range(num_dimensions)]
+    d = reduce(gcd, prelim_result)
+    return [e // d for e in prelim_result]
+
+
+def multinomial(*ks: int) -> int:
+    return factorial(sum(ks)) // prod(map(factorial, ks))
+
+
+def multiplicity(bounds):
+    # We could do better, but this suffices for now
+    return Counter(
+        tuple(sorted(t)) for t in product(*map(range, bounds))
+    )
+
+
+def divide_pot4(num_rounds, wins):
+    score = [num_rounds - win for win in wins]
+    num_players = len(score)
+
+    def player_0_part(score_: tuple[int, ...]) -> int:
+        player_0, *others = score_
+
+        def h1(*t: int):
+            return multinomial(*t) * num_players ** (sum(score) - sum(t))
+
+        return sum(h1(player_0 - 1, *t) * m for t, m in multiplicity(others).items())
+
+    def swap(k: int) -> tuple[int, ...]:
+        return tuple(score[k] if i == 0 else score[0] if i == k else s for i, s in enumerate(score))
+
+    preliminary_result = [player_0_part(swap(k)) for k in range(len(score))]
+    d = gcd(*preliminary_result)
+    return [x // d for x in preliminary_result]

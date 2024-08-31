@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a355355-927b-40d1-b8dd-b73f1ecf6768" name="Default" comment="More stuff">
+      <change afterPath="$PROJECT_DIR$/python_code/src/unfinished_game_lachesism.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_code/src/drain_fill.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/drain_fill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_code/src/unfinished_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/src/unfinished_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_code/test/test_unfinished_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_code/test/test_unfinished_game.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +28,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Erik Colban &lt;erik.colban@resmed.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -40,6 +47,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="1R4N48NyduOHfoKHRVELybqGPWy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,13 +59,28 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.pytest for test_unfinished_game.test_few_players_few_rounds.executor": "Run",
+    "Python tests.pytest for test_unfinished_game.test_few_players_many_rounds.executor": "Run",
+    "Python tests.pytest for test_unfinished_game.test_many_players_few_rounds.executor": "Run",
+    "Python tests.pytest for test_unfinished_game.test_multinomial.executor": "Run",
+    "Python tests.pytest for test_unfinished_game.test_simple_cases.executor": "Run",
+    "Python tests.pytest in test_unfinished_game.py.executor": "Run",
+    "Python.scratch_1.executor": "Run",
+    "Python.unfinished_game.executor": "Run",
+    "Python.unfinished_game_lachesism_2.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "TF_FMT": "false",
-    "last_opened_file_path": "/Users/Erikc/Documents/Projects/Codewars",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/ecolban/projects/Codewars/python_code/src",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
+    ]
   }
 }]]></component>
   <component name="PyConsoleOptionsProvider">
@@ -77,9 +103,10 @@
       <recent name="$PROJECT_DIR$/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_drain_fill.test_drain_fill">
-    <configuration name="bridge_puzzle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest in test_unfinished_game.py">
+    <configuration name="unfinished_game_lachesism_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_code" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -90,7 +117,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/bridge_puzzle.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/unfinished_game_lachesism_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,66 +126,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="drain_fill" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_unfinished_game.test_many_players_few_rounds" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/drain_fill.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="shrink_list" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_code/src/shrink_list.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for drain_fill.test_fizzbuzz" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;drain_fill.test_fizzbuzz&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_drain_fill.test_drain_fill" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="python_code" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
@@ -169,26 +139,84 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_drain_fill.test_drain_fill&quot;" />
+      <option name="_new_target" value="&quot;test_unfinished_game.test_many_players_few_rounds&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test_unfinished_game.test_multinomial" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="python_code" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_unfinished_game.test_multinomial&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_unfinished_game.test_simple_cases" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="python_code" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_unfinished_game.test_simple_cases&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_unfinished_game.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="python_code" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_code/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/python_code/test/test_unfinished_game.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.bridge_puzzle" />
-      <item itemvalue="Python.drain_fill" />
-      <item itemvalue="Python.shrink_list" />
-      <item itemvalue="Python tests.pytest for drain_fill.test_fizzbuzz" />
-      <item itemvalue="Python tests.pytest for test_drain_fill.test_drain_fill" />
+      <item itemvalue="Python.unfinished_game_lachesism_2" />
+      <item itemvalue="Python tests.pytest for test_unfinished_game.test_multinomial" />
+      <item itemvalue="Python tests.pytest for test_unfinished_game.test_many_players_few_rounds" />
+      <item itemvalue="Python tests.pytest for test_unfinished_game.test_simple_cases" />
+      <item itemvalue="Python tests.pytest in test_unfinished_game.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_drain_fill.test_drain_fill" />
-        <item itemvalue="Python.bridge_puzzle" />
-        <item itemvalue="Python.drain_fill" />
-        <item itemvalue="Python tests.pytest for drain_fill.test_fizzbuzz" />
-        <item itemvalue="Python.shrink_list" />
+        <item itemvalue="Python tests.pytest in test_unfinished_game.py" />
+        <item itemvalue="Python.unfinished_game_lachesism_2" />
+        <item itemvalue="Python tests.pytest for test_unfinished_game.test_multinomial" />
+        <item itemvalue="Python tests.pytest for test_unfinished_game.test_simple_cases" />
+        <item itemvalue="Python tests.pytest for test_unfinished_game.test_many_players_few_rounds" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -289,7 +317,55 @@
       <option name="project" value="LOCAL" />
       <updated>1661060260516</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="More stuff">
+      <option name="closed" value="true" />
+      <created>1723755229445</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723755229445</updated>
+    </task>
+    <task id="LOCAL-00005" summary="More stuff">
+      <option name="closed" value="true" />
+      <created>1724725740433</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724725740433</updated>
+    </task>
+    <task id="LOCAL-00006" summary="More stuff">
+      <option name="closed" value="true" />
+      <created>1725116165640</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725116165640</updated>
+    </task>
+    <task id="LOCAL-00007" summary="More stuff">
+      <option name="closed" value="true" />
+      <created>1725116189524</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1725116189524</updated>
+    </task>
+    <task id="LOCAL-00008" summary="More stuff">
+      <option name="closed" value="true" />
+      <created>1725152585371</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1725152585371</updated>
+    </task>
+    <task id="LOCAL-00009" summary="More stuff">
+      <option name="closed" value="true" />
+      <created>1725154546027</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1725154546027</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,11 +389,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/kotlin_code/src/Rational.kt</url>
-          <line>144</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/python_code/test/test_sales_report.py</url>
           <line>50</line>

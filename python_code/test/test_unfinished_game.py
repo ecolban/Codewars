@@ -1,4 +1,9 @@
-from unfinished_game import divide_pot
+from random import randrange
+
+from unfinished_game import divide_pot4 as divide_pot
+# from unfinished_game_lachesism import divide_pot as divide_pot
+# from unfinished_game_dfhwze import divide_pot as divide_pot
+from unfinished_game_dfhwze import divide_pot as divide_pot_ref
 
 
 def test_simple_cases():
@@ -13,34 +18,29 @@ def test_simple_cases():
     assert divide_pot(3, [0, 2, 2]) == [1, 13, 13]
     assert divide_pot(3, [1, 1, 2]) == [5, 5, 17]
     assert divide_pot(3, [1, 2, 2]) == [1, 4, 4]
+    assert divide_pot(4, [1, 2, 2, 1]) == [541, 1507, 1507, 541]
+    assert divide_pot(5, [1, 1, 2, 0, 2]) == [172086568, 172086568, 403132603, 70264783, 403132603]
+    assert divide_pot(6, [1, 2, 4, 0, 1]) == [9252454862, 21634178542, 108637864327, 3810938032, 9252454862]
+
+
+def batch(rounds_to_win, num_players, num_tests):
+    for _ in range(num_tests):
+        wins = [randrange(rounds_to_win // 2, rounds_to_win) for _ in range(num_players)]
+        actual = divide_pot(rounds_to_win, wins.copy())
+        expected = divide_pot_ref(rounds_to_win, wins)
+        assert actual == expected
+
+
+def test_few_players_few_rounds():
+    batch(4, 2, 100)
 
 
 def test_few_players_many_rounds():
-    assert divide_pot(200, [100, 60]) == [
-        13737745857356573248771618492010517812724314464365484251730485603975427,
-        65746836224554326097893232543533092177903479975288858594562843623165,
-    ]
-    assert divide_pot(100, [60, 55, 50]) == [
-        23049286833659104083098195227207485982674327747244628797356641,
-        9210891662893061575143547265089825189252331845955748279377121,
-        3110375236663583856320876091940244825107975183627146250557121,
-    ]
+    batch(100, 2, 30)
+    batch(100, 3, 30)
 
 
 def test_many_players_few_rounds():
-    assert divide_pot(10, [5, 5, 6, 7, 2, 8]) == [
-        490088645609, 490088645609, 1251509327779, 3076206353265, 22970745575, 7364130865715,
-    ]
-    distr = divide_pot(5, [4, 2, 3, 2, 4, 2, 0, 1, 3, 1])
-    assert distr == [
-        480465558384498,
-        23240428942778,
-        104088900227513,
-        23240428942778,
-        480465558384498,
-        23240428942778,
-        1058271328058,
-        5055762309793,
-        104088900227513,
-        5055762309793,
-    ]
+    batch(7, 8, 50)
+    batch(6, 9, 25)
+    batch(5, 10, 25)
